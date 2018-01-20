@@ -1,0 +1,133 @@
+{
+    "success": true,    
+    "items": {
+        "\u2605 StatTrak\u2122 Shadow Daggers | Urban Masked (Well-Worn)": {
+            "name": "\u2605 StatTrak\u2122 Shadow Daggers | Urban Masked (Well-Worn)",
+            "safe_price": "63.09",
+            "safe_net_price": "59.94",
+            "ongoing_price_manipulation": false,
+            "total_volume": 45,
+            "7_days": {
+                "median_price": "63.09",
+                "median_net_price": "59.94",
+                "average_price": "63.09",
+                "average_net_price": "59.94",
+                "lowest_price": "63.09",
+                "lowest_net_price": "59.94",
+                "highest_price": "63.09",
+                "highest_net_price": "59.94",
+                "mean_absolute_deviation": "0.00",
+                "deviation_percentage": 0,
+                "trend": 0,
+                "volume": 1
+            },
+            "30_days": {
+                "median_price": "59.78",
+                "median_net_price": "55.38",
+                "average_price": "59.43",
+                "average_net_price": "54.28",
+                "lowest_price": "54.40",
+                "lowest_net_price": "48.96",
+                "highest_price": "63.75",
+                "highest_net_price": "57.38",
+                "mean_absolute_deviation": "3.99",
+                "deviation_percentage": 0.06713780918727916,
+                "trend": 0.09962904080551246,
+                "volume": 4
+            },
+            "all_time": {
+                "median_price": "65.91",
+                "median_net_price": "57.32",
+                "average_price": "69.94",
+                "average_net_price": "60.84",
+                "lowest_price": "37.65",
+                "lowest_net_price": "32.75",
+                "highest_price": "230.01",
+                "highest_net_price": "200.01",
+                "mean_absolute_deviation": "18.13",
+                "deviation_percentage": 0.2592477284142826,
+                "trend": -0.42131266646914944,
+                "volume": 45
+            },
+            "first_seen": 1444213248
+        },
+        "\u2605 StatTrak\u2122 Huntsman Knife | Doppler (Minimal Wear)": {
+            "name": "\u2605 StatTrak\u2122 Huntsman Knife | Doppler (Minimal Wear)",
+            "safe_price": "249.00",
+            "safe_net_price": "224.10",
+            "ongoing_price_manipulation": false,
+            "total_volume": 4,
+            "7_days": {
+                "median_price": "249.00",
+                "median_net_price": "224.10",
+                "average_price": "249.00",
+                "average_net_price": "224.10",
+                "lowest_price": "249.00",
+                "lowest_net_price": "224.10",
+                "highest_price": "249.00",
+                "highest_net_price": "224.10",
+                "mean_absolute_deviation": "0.00",
+                "deviation_percentage": 0,
+                "trend": 0,
+                "volume": 1
+            },
+            "30_days": {
+                "median_price": "359.32",
+                "median_net_price": "312.46",
+                "average_price": "359.32",
+                "average_net_price": "312.46",
+                "lowest_price": "359.32",
+                "lowest_net_price": "312.46",
+                "highest_price": "359.32",
+                "highest_net_price": "312.46",
+                "mean_absolute_deviation": "0.00",
+                "deviation_percentage": 0,
+                "trend": 0,
+                "volume": 1
+            },
+            "all_time": {
+                "median_price": "355.66",
+                "median_net_price": "309.28",
+                "average_price": "377.20",
+                "average_net_price": "328.01",
+                "lowest_price": "328.00",
+                "lowest_net_price": "285.22",
+                "highest_price": "469.49",
+                "highest_net_price": "408.26",
+                "mean_absolute_deviation": "46.14",
+                "deviation_percentage": 0.12232738166249121,
+                "trend": -0.21728342549269752,
+                "volume": 4
+            },
+            "first_seen": 1492892567
+        },
+        "\u2605 StatTrak\u2122 Huntsman Knife | Fade (Minimal Wear)": {
+            "name": "\u2605 StatTrak\u2122 Huntsman Knife | Fade (Minimal Wear)",
+            "safe_price": "313.19",
+            "safe_net_price": "272.35",
+            "ongoing_price_manipulation": false,
+            "total_volume": 16,
+            "7_days": {
+                "volume": 0
+            },
+            "30_days": {
+                "volume": 0
+            },
+            "all_time": {
+                "median_price": "313.19",
+                "median_net_price": "272.35",
+                "average_price": "311.35",
+                "average_net_price": "270.75",
+                "lowest_price": "209.72",
+                "lowest_net_price": "182.38",
+                "highest_price": "410.97",
+                "highest_net_price": "357.38",
+                "mean_absolute_deviation": "48.95",
+                "deviation_percentage": 0.1572227809528398,
+                "trend": -0.346274167034765,
+                "volume": 16
+            },
+            "first_seen": 1444367193
+        }
+    }
+}
