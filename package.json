@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "bignumber.js": "^5.0.0",
-    "body": "^5.1.0",
     "mysql": "^2.15.0",
     "node-uuid": "^1.4.8",
     "squel": "^5.12.0"

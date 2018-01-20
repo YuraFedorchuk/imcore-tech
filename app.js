@@ -2,9 +2,9 @@
 
 const http  = require('http');
 
-const URL   = require('url').URL;const fs    = require('fs');
+const URL   = require('url').URL;
+const fs    = require('fs');
 const ctrl  = require('./controllers');
-const formBody = require("body/form")
 
 const logger        = require('./core/logger');
 const db            = require('./core/dbHandler');
@@ -45,10 +45,7 @@ const server = http.createServer((req, res) => {
     } else if (pathname === '/api/getPrice') {
         let name = searchParams.get('name');
         name = decodeURIComponent(name);
-        // formBody(req, (err, res) => {
-        //     console.log(err, res);
-        // });
-        // return;
+
         if (!name) {
             res.statusCode = 400;
             res.end('Bad params');
