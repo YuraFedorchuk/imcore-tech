@@ -1,7 +1,7 @@
 'use strict';
 
 const http                  = require('http');
-const {isObject, isArray}   = require('util');
+const {isObject}            = require('util');
 const uuid                  = require('node-uuid');
 const squel                 = require('squel');
 const BigNumber             = require('bignumber.js');
@@ -19,8 +19,9 @@ const worker = {
             .then(() => {
                 logger.info(__filename,
                     'cron worker finished with status code 0');
-                db.close();
-                process.exit(0);
+                db.close(() => {
+                    process.exit(0);
+                });
             })
             .catch(processFatal);
     },
@@ -28,45 +29,25 @@ const worker = {
         return new Promise((resolve, reject) => {
             worker._getPrices()
                 .then(res => {
-                    /**
-                     * TODO remove after testing
-                     */
-                    // require('fs').readFile(__dirname + '/../externals/prices.json', 'utf-8', 
-                    //     (err, data) => {
-                    //         console.log(err);
-                    //         let parsed = null;
-                    //         try {
-                    //             parsed = JSON.parse(data);
-                    //         } catch(err) {
-                    //             return reject(err);
-                    //         }
-    
-                    //         let values = Object.values(parsed.items).map(e => {
                     try {
                         res = JSON.parse(res);
                     } catch(e) {
                         return reject(e);
                     }
-    
-                    if (!res || !res.items || !isArray(res.items)) {
+
+                    if (!res || !res.items || !isObject(res.items)) {
                         throw new Error('Bad response from api');
                     }
 
-                    let values = res.items.map(e => {
+                    let values = Object.values(res.items).map(e => {
                         return { 
-                            name: e.name, 
+                            name: e.name.replace(/'/g, '"'), 
                             safe_price: new BigNumber(e.safe_price)
                                 .times(100).toFixed(0),  
                             safe_net_price: new BigNumber(e.safe_net_price)
                                 .times(100).toFixed(0)
                         }
                     });
-
-                    /**
-                     * TODO remove
-                     */
-                    // fs.writeFile(__dirname + './../externals/prices.json', 
-                    //     JSON.stringify(res), function() {});
     
                     updateItems(values)
                         .then(resolve)
@@ -76,13 +57,8 @@ const worker = {
         });
     },
     _getPrices: () => {
-        return new Promise((resolve, reject) => {
-            /**
-             * TODO remove after testing
-             */
-            // return reject(new Error('blablabla'));
-                 
-            let url = `${config.url}v2/pricelist?key=${config.apiKey}`;
+        return new Promise((resolve, reject) => {return resolve();
+           const url = `${config.url}v2/pricelist?key=${config.apiKey}`;
 
             const reqId = uuid.v4();
     
