@@ -42,8 +42,13 @@ const worker = {
                     //         }
     
                     //         let values = Object.values(parsed.items).map(e => {
+                    try {
+                        res = JSON.parse(res);
+                    } catch(e) {
+                        return reject(e);
+                    }
     
-                    if (!res || !res.items || !isArray(items)) {
+                    if (!res || !res.items || !isArray(res.items)) {
                         throw new Error('Bad response from api');
                     }
 
@@ -56,6 +61,12 @@ const worker = {
                                 .times(100).toFixed(0)
                         }
                     });
+
+                    /**
+                     * TODO remove
+                     */
+                    // fs.writeFile(__dirname + './../externals/prices.json', 
+                    //     JSON.stringify(res), function() {});
     
                     updateItems(values)
                         .then(resolve)
@@ -69,7 +80,7 @@ const worker = {
             /**
              * TODO remove after testing
              */
-            // return resolve();
+            // return reject(new Error('blablabla'));
                  
             let url = `${config.url}v2/pricelist?key=${config.apiKey}`;
 
@@ -102,10 +113,7 @@ const worker = {
                 res.on('end', () => {
                     logger.info(__filename, 'getItems:response:data', {
                         reqId: reqId,
-                        /**
-                         * too large data - cut for 100 chars
-                         */
-                        response: data.slice(0, 100)
+                        response: data
                     });
     
                     if (!data || isObject(data)) {
@@ -126,5 +134,5 @@ const worker = {
     }
 };
 
-// worker.process();
+
 module.exports = worker.process;
